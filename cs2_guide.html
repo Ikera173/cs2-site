@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CS2 — Гід для новачка</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#0b0d10;color:#f2f2f2;line-height:1.6}
+a{color:inherit;text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;background:rgba(11,13,16,.92);backdrop-filter:blur(12px);border-bottom:1px solid #242830}
+.navin{max-width:1150px;margin:auto;padding:15px 22px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:21px;font-weight:900;letter-spacing:1px}.logo span{color:#e29b28}
+.navlinks{display:flex;gap:20px;font-size:14px;color:#aaa}.navlinks a:hover{color:#fff}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:110px 20px 60px;background:radial-gradient(circle at 50% 25%,#3b2811 0,#16120c 25%,#0b0d10 62%)}
+.hero h1{font-size:clamp(52px,10vw,105px);line-height:.9;font-weight:950;letter-spacing:-5px}.hero h1 span{color:#e29b28}
+.hero p{max-width:720px;margin:28px auto;color:#b9bec7;font-size:19px}
+.btn{display:inline-block;background:#e29b28;color:#111;font-weight:800;padding:14px 24px;border-radius:8px;transition:.2s}.btn:hover{transform:translateY(-2px);background:#f3ae3d}
+section{max-width:1150px;margin:auto;padding:90px 22px}
+.kicker{color:#e29b28;text-transform:uppercase;font-size:13px;font-weight:800;letter-spacing:2px;margin-bottom:10px}
+h2{font-size:38px;margin-bottom:16px}.lead{color:#aeb4bd;max-width:760px;margin-bottom:35px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#12161b;border:1px solid #252b33;border-radius:14px;padding:25px;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:#555}
+.card h3{margin-bottom:9px}.card p{color:#aeb4bd;font-size:15px}
+.big{grid-column:span 2}
+.team{display:flex;gap:18px;flex-wrap:wrap}.team .card{flex:1;min-width:260px}
+.tag{display:inline-block;padding:5px 9px;border-radius:5px;background:#222832;color:#ddd;font-size:12px;margin-bottom:14px}
+.term{cursor:pointer}
+.term strong{color:#f0a631}
+.table{width:100%;border-collapse:collapse;background:#12161b;border-radius:12px;overflow:hidden}
+.table th,.table td{text-align:left;padding:15px;border-bottom:1px solid #252b33}.table th{color:#e29b28}.table td{color:#c3c7ce}
+.weapons{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.weapon{background:#15191f;padding:18px;border-radius:10px;border:1px solid #272d35}.weapon b{display:block;margin-bottom:5px}.weapon span{font-size:13px;color:#999}
+.dictionary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.dictionary button{background:#15191f;color:white;border:1px solid #2a3038;border-radius:10px;padding:17px;text-align:left;cursor:pointer;font-size:15px}
+.dictionary button:hover{border-color:#e29b28}
+footer{text-align:center;padding:45px 20px;border-top:1px solid #242830;color:#777;font-size:13px}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:20;align-items:center;justify-content:center;padding:20px}
+.modalbox{max-width:520px;width:100%;background:#15191f;border:1px solid #343b45;border-radius:16px;padding:28px;position:relative}
+.close{position:absolute;right:18px;top:12px;font-size:25px;cursor:pointer;color:#aaa}
+#modalText{color:#bfc4cc;margin-top:10px}
+@media(max-width:800px){.navlinks{display:none}.grid,.dictionary{grid-template-columns:1fr 1fr}.big{grid-column:span 2}.weapons{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.grid,.dictionary,.weapons{grid-template-columns:1fr}.big{grid-column:span 1}h2{font-size:30px}.hero h1{letter-spacing:-3px}}
+</style>
+</head>
+<body>
+<nav><div class="navin">
+<div class="logo">CS<span>2</span> GUIDE</div>
+<div class="navlinks"><a href="#what">Що це?</a><a href="#match">Матч</a><a href="#terms">Терміни</a><a href="#faceit">Faceit</a></div>
+</div></nav>
+
+<header class="hero">
+<div>
+<div class="kicker">Гід для тих, хто ніколи не грав</div>
+<h1>COUNTER<br><span>STRIKE 2</span></h1>
+<p>Просте пояснення CS2: що це за гра, як проходять матчі, хто такі CT і T, що купують гравці та що означають дивні слова з чату.</p>
+<a class="btn" href="#what">Почати знайомство ↓</a>
+</div>
+</header>
+
+<section id="what">
+<div class="kicker">01 — Основи</div><h2>Що таке CS2?</h2>
+<p class="lead">Counter-Strike 2 — командний тактичний шутер. Дві команди по 5 гравців змагаються раунд за раундом. Головна особливість — одна помилка може коштувати всього раунду.</p>
+<div class="grid">
+<div class="card big"><span class="tag">Головна ідея</span><h3>5 проти 5</h3><p>Терористи намагаються встановити бомбу на одному з двох сайтів — A або B. Контртерористи захищають сайти, намагаються знищити суперників або знешкодити бомбу.</p></div>
+<div class="card"><span class="tag">Важливо</span><h3>Одне життя</h3><p>Якщо тебе вбили — у більшості раундів ти спостерігаєш до наступного раунду.</p></div>
+<div class="card"><span class="tag">Мета</span><h3>Перемагати раунди</h3><p>Команда отримує раунд за виконання своєї мети або знищення всієї команди суперника.</p></div>
+</div>
+</section>
+
+<section id="match">
+<div class="kicker">02 — Як це працює</div><h2>Один раунд CS2</h2>
+<div class="grid">
+<div class="card"><h3>① Buy Time</h3><p>На початку раунду гравці купують зброю, броню та гранати за гроші.</p></div>
+<div class="card"><h3>② Початок</h3><p>T виходять на карту, а CT займають позиції та готуються захищати сайти.</p></div>
+<div class="card"><h3>③ Бій</h3><p>Гравці займають позиції, використовують гранати, роблять піки та намагаються отримати перевагу.</p></div>
+<div class="card"><h3>④ Бомба</h3><p>T можуть встановити C4. Після цього CT мають обмежений час, щоб її знешкодити.</p></div>
+<div class="card"><h3>⑤ Кінець</h3><p>Раунд закінчується, коли виконана мета, всі гравці однієї команди загинули або сплив час.</p></div>
+<div class="card"><h3>⑥ Наступний раунд</h3><p>Гравці отримують гроші, купують спорядження та продовжують матч.</p></div>
+</div>
+</section>
+
+<section>
+<div class="kicker">03 — Команди</div><h2>CT та T</h2>
+<div class="team">
+<div class="card"><span class="tag">T — Terrorists</span><h3>Терористи</h3><p>Основна мета — встановити бомбу на A або B та захистити її до вибуху. Також можна перемогти, знищивши всіх CT.</p></div>
+<div class="card"><span class="tag">CT — Counter-Terrorists</span><h3>Контртерористи</h3><p>Захищають сайти, намагаються не допустити встановлення бомби або знешкодити її після встановлення.</p></div>
+</div>
+</section>
+
+<section>
+<div class="kicker">04 — Економіка</div><h2>Чому гравці іноді нічого не купують?</h2>
+<p class="lead">У CS2 важлива не тільки стрільба. Команда повинна правильно керувати грошима.</p>
+<table class="table">
+<tr><th>Термін</th><th>Що означає</th></tr>
+<tr><td>Full Buy</td><td>Повна закупка: основна зброя, броня та потрібні гранати.</td></tr>
+<tr><td>Eco</td><td>Економний раунд. Гравці майже не витрачають гроші, щоб накопичити на наступний.</td></tr>
+<tr><td>Force Buy</td><td>Команда витрачає майже все, хоча грошей недостатньо для повної закупки.</td></tr>
+<tr><td>Save</td><td>Гравець не вступає в ризикований бій і зберігає зброю до наступного раунду.</td></tr>
+</table>
+</section>
+
+<section>
+<div class="kicker">05 — Зброя</div><h2>Що використовують гравці?</h2>
+<div class="weapons">
+<div class="weapon"><b>AK-47</b><span>Потужна гвинтівка T</span></div>
+<div class="weapon"><b>M4A1-S / M4A4</b><span>Основні гвинтівки CT</span></div>
+<div class="weapon"><b>AWP</b><span>Снайперська гвинтівка</span></div>
+<div class="weapon"><b>Desert Eagle</b><span>Потужний пістолет</span></div>
+<div class="weapon"><b>Glock-18</b><span>Стартовий пістолет T</span></div>
+<div class="weapon"><b>USP-S / P2000</b><span>Стартовий пістолет CT</span></div>
+<div class="weapon"><b>MP9 / MAC-10</b><span>Пістолети-кулемети</span></div>
+<div class="weapon"><b>Grenades</b><span>Smoke, Flash, HE, Molotov</span></div>
+</div>
+</section>
+
+<section id="terms">
+<div class="kicker">06 — Словник</div><h2>CS2 без незрозумілих слів</h2>
+<p class="lead">Натисни на термін, щоб побачити просте пояснення.</p>
+<div class="dictionary" id="dictionary"></div>
+</section>
+
+<section>
+<div class="kicker">07 — Карти</div><h2>Де проходять матчі?</h2>
+<div class="grid">
+<div class="card"><h3>Mirage</h3><p>Одна з найвідоміших карт. Має два сайти A і B та багато позицій для тактичної гри.</p></div>
+<div class="card"><h3>Inferno</h3><p>Карта з вузькими проходами, Banana та сильним значенням гранат.</p></div>
+<div class="card"><h3>Nuke</h3><p>Вертикальна карта з двома основними рівнями та складною структурою.</p></div>
+<div class="card"><h3>Ancient</h3><p>Карта з центральною зоною Mid та джунглями навколо сайтів.</p></div>
+<div class="card"><h3>Anubis</h3><p>Карта з відкритими просторами, водою та великою кількістю кутів.</p></div>
+<div class="card"><h3>Dust II</h3><p>Класична карта з легендарними позиціями Long, Short і Mid.</p></div>
+</div>
+</section>
+
+<section id="faceit">
+<div class="kicker">08 — Змагальна гра</div><h2>Що таке FACEIT?</h2>
+<p class="lead">FACEIT — окрема платформа для змагальних матчів. Її часто використовують гравці, які хочуть серйозніше грати в CS2.</p>
+<div class="grid">
+<div class="card"><h3>ELO</h3><p>Число, яке використовується для визначення рейтингу гравця. Перемоги та поразки змінюють його.</p></div>
+<div class="card"><h3>Level 1–10</h3><p>FACEIT має рівні від 1 до 10. Вони показують діапазон рейтингу гравця.</p></div>
+<div class="card"><h3>Матч</h3><p>Ти граєш із командою проти інших гравців приблизно твого рейтингового рівня.</p></div>
+</div>
+</section>
+
+<footer>CS2 GUIDE • Неофіційний навчальний сайт для новачків</footer>
+
+<div class="modal" id="modal"><div class="modalbox"><div class="close" onclick="closeModal()">×</div><h2 id="modalTitle"></h2><p id="modalText"></p></div></div>
+
+<script>
+const terms={
+"Frag":"Вбивство суперника. Наприклад, «зробити frag» означає отримати kill.",
+"Kill":"Вбивство суперника.",
+"Death":"Смерть твого персонажа в раунді.",
+"Clutch":"Ситуація, коли один гравець залишається проти кількох суперників і намагається виграти раунд.",
+"Entry":"Перший гравець, який заходить у зону та намагається створити перевагу для команди.",
+"Trade":"Швидке вбивство суперника після того, як він убив твого напарника.",
+"Peek":"Вихід із-за укриття, щоб побачити або атакувати суперника.",
+"Rotate":"Переміщення гравця на іншу частину карти, наприклад із A на B.",
+"Smoke":"Димова граната, яка створює хмару та блокує огляд.",
+"Flash":"Світлошумова граната. Засліплює гравців, якщо вони дивляться в її бік.",
+"Molotov":"Запалювальна граната, яка створює зону вогню та змушує суперника змінити позицію.",
+"HE":"Осколкова граната, яка завдає шкоди гравцям у зоні вибуху.",
+"HS":"Headshot — влучання в голову.",
+"Spray":"Безперервна стрільба, коли гравець контролює віддачу зброї.",
+"Recoil":"Віддача зброї під час стрільби.",
+"Crosshair":"Приціл у центрі екрана.",
+"ADR":"Average Damage per Round — середня кількість шкоди, яку гравець завдає за раунд.",
+"Demo":"Запис матчу, який можна переглядати після гри.",
+"Callout":"Назва конкретної позиції на карті, яку використовують у комунікації."
+};
+const dict=document.getElementById("dictionary");
+Object.entries(terms).forEach(([k,v])=>{
+const b=document.createElement("button"); b.textContent=k; b.onclick=()=>openModal(k,v); dict.appendChild(b);
+});
+function openModal(t,x){document.getElementById("modalTitle").textContent=t;document.getElementById("modalText").textContent=x;document.getElementById("modal").style.display="flex"}
+function closeModal(){document.getElementById("modal").style.display="none"}
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
+</script>
+</body>
+</html>
